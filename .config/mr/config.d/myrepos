@@ -1,0 +1,7 @@
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/myrepos.git]
+checkout = vcsh clone git@github.com:marklee77/vcsh-homedir-myrepos.git myrepos
+commit   = vcsh myrepos commit -a
+update   = vcsh myrepos pull
+push     = vcsh myrepos push
+status   = vcsh myrepos status
+gc       = vcsh myrepos gc

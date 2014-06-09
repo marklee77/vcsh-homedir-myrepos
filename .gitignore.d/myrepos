@@ -1,0 +1,8 @@
+*
+!.config
+!.config/mr
+!.config/mr/config.d
+!.config/mr/config.d/myrepos
+!.gitignore.d
+!.gitignore.d/myrepos
+!.mrconfig
