@@ -7,4 +7,5 @@ status   = vcsh vim status
 gc       = vcsh vim gc
 
 [DEFAULT]
-include = cat ${XDG_CONFIG_HOME:-$HOME/.config}/mr/config.d/*
+include = cat ${XDG_CONFIG_HOME:-$HOME/.config}/mr/config.d/* 2>/dev/null || true
+order   = 25
