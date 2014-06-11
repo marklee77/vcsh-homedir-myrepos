@@ -1,5 +1,4 @@
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/myrepos.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-myrepos.git myrepos
 commit   = vcsh myrepos commit -a
 update   = vcsh myrepos pull
@@ -8,7 +7,6 @@ status   = vcsh myrepos status
 gc       = vcsh myrepos gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/zsh.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-zsh.git zsh
 commit   = vcsh zsh commit -a
 update   = vcsh zsh pull
@@ -17,7 +15,6 @@ status   = vcsh zsh status
 gc       = vcsh zsh gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/tmux.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-tmux.git tmux
 commit   = vcsh tmux commit -a
 update   = vcsh tmux pull
@@ -26,7 +23,6 @@ status   = vcsh tmux status
 gc       = vcsh tmux gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/vim.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-vim.git vim
 commit   = vcsh vim commit -a
 update   = vcsh vim pull
@@ -35,7 +31,6 @@ status   = vcsh vim status
 gc       = vcsh vim gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/git.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-git.git git
 commit   = vcsh git commit -a
 update   = vcsh git pull
@@ -44,7 +39,6 @@ status   = vcsh git status
 gc       = vcsh git gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/powerline.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-powerline.git powerline
 commit   = vcsh powerline commit -a
 update   = vcsh powerline pull &&
@@ -54,7 +48,6 @@ status   = vcsh powerline status
 gc       = vcsh powerline gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/pyenv.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-pyenv.git pyenv
 commit   = vcsh pyenv commit -a
 update   = vcsh pyenv pull
@@ -63,7 +56,6 @@ status   = vcsh pyenv status
 gc       = vcsh pyenv gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/rbenv.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-rbenv.git rbenv
 commit   = vcsh rbenv commit -a
 update   = vcsh rbenv pull
@@ -72,7 +64,6 @@ status   = vcsh rbenv status
 gc       = vcsh rbenv gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/nodenv.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-nodenv.git nodenv
 commit   = vcsh nodenv commit -a
 update   = vcsh nodenv pull
@@ -81,7 +72,6 @@ status   = vcsh nodenv status
 gc       = vcsh nodenv gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/todo.txt.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-todo.txt.git todo.txt
 commit   = vcsh todo.txt commit -a
 update   = vcsh todo.txt pull
@@ -90,7 +80,6 @@ status   = vcsh todo.txt status
 gc       = vcsh todo.txt gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/mail.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-mail.git mail
 commit   = vcsh mail commit -a
 update   = vcsh mail pull
@@ -99,7 +88,6 @@ status   = vcsh mail status
 gc       = vcsh mail gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/xconfig.git]
-order    = 5
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-xconfig.git xconfig
 commit   = vcsh xconfig commit -a
 update   = vcsh xconfig pull
