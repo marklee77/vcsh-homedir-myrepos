@@ -8,6 +8,22 @@ push     = vcsh myrepos push git@github.com:marklee77/vcsh-homedir-myrepos.git
 status   = vcsh myrepos status
 gc       = vcsh myrepos gc
 
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/zsh.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-zsh.git zsh
+commit   = vcsh zsh commit -a
+update   = vcsh zsh pull
+push     = vcsh zsh push git@github.com:marklee77/vcsh-homedir-zsh.git
+status   = vcsh zsh status
+gc       = vcsh zsh gc
+
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/tmux.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-tmux.git tmux
+commit   = vcsh tmux commit -a
+update   = vcsh tmux pull
+push     = vcsh tmux push git@github.com:marklee77/vcsh-homedir-tmux.git
+status   = vcsh tmux status
+gc       = vcsh tmux gc
+
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/vim.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-vim.git vim
 commit   = vcsh vim commit -a
@@ -23,4 +39,46 @@ update   = vcsh git pull
 push     = vcsh git push git@github.com:marklee77/vcsh-homedir-git.git
 status   = vcsh git status
 gc       = vcsh git gc
+
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/powerline.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-powerline.git powerline
+commit   = vcsh powerline commit -a
+update   = vcsh powerline pull &&
+           pip install --user git+git://github.com/Lokaltog/powerline
+push     = vcsh powerline push git@github.com:marklee77/vcsh-homedir-powerline.git
+status   = vcsh powerline status
+gc       = vcsh powerline gc
+
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/pyenv.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-pyenv.git pyenv
+commit   = vcsh pyenv commit -a
+update   = vcsh pyenv pull
+push     = vcsh pyenv push git@github.com:marklee77/vcsh-homedir-pyenv.git
+status   = vcsh pyenv status
+gc       = vcsh pyenv gc
+
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/rbenv.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-rbenv.git rbenv
+commit   = vcsh rbenv commit -a
+update   = vcsh rbenv pull
+push     = vcsh rbenv push git@github.com:marklee77/vcsh-homedir-rbenv.git
+status   = vcsh rbenv status
+gc       = vcsh rbenv gc
+
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/nodenv.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-nodenv.git nodenv
+commit   = vcsh nodenv commit -a
+update   = vcsh nodenv pull
+push     = vcsh nodenv push git@github.com:marklee77/vcsh-homedir-nodenv.git
+status   = vcsh nodenv status
+gc       = vcsh nodenv gc
+
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/todo.txt.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-todo.txt.git todo.txt
+commit   = vcsh todo.txt commit -a
+update   = vcsh todo.txt pull
+push     = vcsh todo.txt push git@github.com:marklee77/vcsh-homedir-todo.txt.git
+status   = vcsh todo.txt status
+gc       = vcsh todo.txt gc
+
 
