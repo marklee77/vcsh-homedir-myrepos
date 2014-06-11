@@ -1,5 +1,13 @@
 include = cat ${XDG_CONFIG_HOME:-$HOME/.config}/mr/config.d/* 2>/dev/null || true
 
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/myrepos.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-myrepos.git myrepos
+commit   = vcsh myrepos commit -a
+update   = vcsh myrepos pull
+push     = vcsh myrepos push git@github.com:marklee77/vcsh-homedir-myrepos.git
+status   = vcsh myrepos status
+gc       = vcsh myrepos gc
+
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/vim.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-vim.git vim
 commit   = vcsh vim commit -a
@@ -7,4 +15,12 @@ update   = vcsh vim pull
 push     = vcsh vim push git@github.com:marklee77/vcsh-homedir-vim.git
 status   = vcsh vim status
 gc       = vcsh vim gc
+
+[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/git.git]
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-git.git git
+commit   = vcsh git commit -a
+update   = vcsh git pull
+push     = vcsh git push git@github.com:marklee77/vcsh-homedir-git.git
+status   = vcsh git status
+gc       = vcsh git gc
 
