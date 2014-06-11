@@ -1,4 +1,5 @@
 *
+!.config
 !.config/mr
 !.config/mr/config.d
 !.config/mr/config.d/myrepos
