@@ -20,8 +20,8 @@ setpush  = vcsh git remote set-url --push origin git@github.com:marklee77/vcsh-h
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/powerline.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-powerline.git powerline
-update   = vcsh powerline pull &&
-           pip install --user git+git://github.com/Lokaltog/powerline
+update   = vcsh powerline pull 
+fixups   = pip install --user git+git://github.com/Lokaltog/powerline
 setpush  = vcsh powerline remote set-url --push origin git@github.com:marklee77/vcsh-homedir-powerline.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/pyenv.git]
