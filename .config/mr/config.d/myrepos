@@ -10,86 +10,48 @@ vcsh_status = vcsh $(basename ${MR_REPO} .git) status
 vcsh_gc     = vcsh $(basename ${MR_REPO} .git) gc
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/myrepos.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-myrepos.git myrepos &&
-           vcsh remote set-url --push origin git@github.com:marklee77/vcsh-homedir-myrepos.git
+checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-myrepos.git myrepos
+setpush  = vcsh myrepos remote set-url --push origin git@github.com:marklee77/vcsh-homedir-myrepos.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/zsh.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-zsh.git zsh
-commit   = vcsh zsh commit -a
-update   = vcsh zsh pull
-push     = vcsh zsh push git@github.com:marklee77/vcsh-homedir-zsh.git
-status   = vcsh zsh status
-gc       = vcsh zsh gc
+setpush  = vcsh zsh remote set-url --push origin git@github.com:marklee77/vcsh-homedir-zsh.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/tmux.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-tmux.git tmux
-commit   = vcsh tmux commit -a
-update   = vcsh tmux pull
-push     = vcsh tmux push git@github.com:marklee77/vcsh-homedir-tmux.git
-status   = vcsh tmux status
-gc       = vcsh tmux gc
+setpush  = vcsh tmux remote set-url --push origin git@github.com:marklee77/vcsh-homedir-tmux.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/vim.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-vim.git vim
-commit   = vcsh vim commit -a
-update   = vcsh vim pull
-push     = vcsh vim push git@github.com:marklee77/vcsh-homedir-vim.git
-status   = vcsh vim status
-gc       = vcsh vim gc
+setpush  = vcsh vim remote set-url --push origin git@github.com:marklee77/vcsh-homedir-vim.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/git.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-git.git git
-commit   = vcsh git commit -a
-update   = vcsh git pull
-push     = vcsh git push git@github.com:marklee77/vcsh-homedir-git.git
-status   = vcsh git status
-gc       = vcsh git gc
+setpush  = vcsh git remote set-url --push origin git@github.com:marklee77/vcsh-homedir-git.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/powerline.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-powerline.git powerline
-commit   = vcsh powerline commit -a
 update   = vcsh powerline pull &&
            pip install --user git+git://github.com/Lokaltog/powerline
-push     = vcsh powerline push git@github.com:marklee77/vcsh-homedir-powerline.git
-status   = vcsh powerline status
-gc       = vcsh powerline gc
+setpush  = vcsh powerline remote set-url --push origin git@github.com:marklee77/vcsh-homedir-powerline.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/pyenv.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-pyenv.git pyenv
-commit   = vcsh pyenv commit -a
-update   = vcsh pyenv pull
-push     = vcsh pyenv push git@github.com:marklee77/vcsh-homedir-pyenv.git
-status   = vcsh pyenv status
-gc       = vcsh pyenv gc
+setpush  = vcsh pyenv remote set-url --push origin git@github.com:marklee77/vcsh-homedir-pyenv.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/rbenv.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-rbenv.git rbenv
-commit   = vcsh rbenv commit -a
-update   = vcsh rbenv pull
-push     = vcsh rbenv push git@github.com:marklee77/vcsh-homedir-rbenv.git
-status   = vcsh rbenv status
-gc       = vcsh rbenv gc
+setpush  = vcsh rbenv remote set-url --push origin git@github.com:marklee77/vcsh-homedir-rbenv.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/nodenv.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-nodenv.git nodenv
-commit   = vcsh nodenv commit -a
-update   = vcsh nodenv pull
-push     = vcsh nodenv push git@github.com:marklee77/vcsh-homedir-nodenv.git
-status   = vcsh nodenv status
-gc       = vcsh nodenv gc
+setpush  = vcsh nodenv remote set-url --push origin git@github.com:marklee77/vcsh-homedir-nodenv.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/mail.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-mail.git mail
-commit   = vcsh mail commit -a
-update   = vcsh mail pull
-push     = vcsh mail push git@github.com:marklee77/vcsh-homedir-mail.git
-status   = vcsh mail status
-gc       = vcsh mail gc
+setpush  = vcsh mail remote set-url --push origin git@github.com:marklee77/vcsh-homedir-mail.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/xconfig.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-xconfig.git xconfig
-commit   = vcsh xconfig commit -a
-update   = vcsh xconfig pull
-push     = vcsh xconfig push git@github.com:marklee77/vcsh-homedir-xconfig.git
-status   = vcsh xconfig status
-gc       = vcsh xconfig gc
+setpush  = vcsh xconfig remote set-url --push origin git@github.com:marklee77/vcsh-homedir-xconfig.git
+
