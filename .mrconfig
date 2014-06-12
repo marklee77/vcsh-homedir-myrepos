@@ -1,1 +1,14 @@
+[DEFAULT]
+vcsh_test = perl:
+    -d "$ENV{MR_REPO}/refs/heads" && -d "$ENV{MR_REPO}/refs/tags" &&
+    -d "$ENV{MR_REPO}/objects" && -f "$ENV{MR_REPO}/config" &&
+    `GIT_CONFIG="$ENV{MR_REPO}"/config git config --get vcsh.vcsh` =~ /true/
+vcsh_commit = vcsh $(basename ${MR_REPO} .git) commit -a "$@"
+vcsh_update = vcsh $(basename ${MR_REPO} .git) pull "$@"
+vcsh_push   = vcsh $(basename ${MR_REPO} .git) push "$@"
+vcsh_status = vcsh $(basename ${MR_REPO} .git) status "$@"
+vcsh_gc     = vcsh $(basename ${MR_REPO} .git) gc "$@"
+
+git_commit  = git commit -a "$@" || true
+
 include = cat ${XDG_CONFIG_HOME:-$HOME/.config}/mr/config.d/* 2>/dev/null || true
