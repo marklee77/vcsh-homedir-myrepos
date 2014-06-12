@@ -71,14 +71,6 @@ push     = vcsh nodenv push git@github.com:marklee77/vcsh-homedir-nodenv.git
 status   = vcsh nodenv status
 gc       = vcsh nodenv gc
 
-[${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/todo.txt.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-todo.txt.git todo.txt
-commit   = vcsh todo.txt commit -a
-update   = vcsh todo.txt pull
-push     = vcsh todo.txt push git@github.com:marklee77/vcsh-homedir-todo.txt.git
-status   = vcsh todo.txt status
-gc       = vcsh todo.txt gc
-
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/mail.git]
 checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-mail.git mail
 commit   = vcsh mail commit -a
