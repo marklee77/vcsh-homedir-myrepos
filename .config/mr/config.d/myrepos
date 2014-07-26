@@ -1,46 +1,46 @@
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/myrepos.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-myrepos.git myrepos
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-myrepos.git myrepos
 setpush  = vcsh myrepos remote set-url --push origin git@github.com:marklee77/vcsh-homedir-myrepos.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/zsh.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-zsh.git zsh
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-zsh.git zsh
 setpush  = vcsh zsh remote set-url --push origin git@github.com:marklee77/vcsh-homedir-zsh.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/tmux.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-tmux.git tmux
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-tmux.git tmux
 setpush  = vcsh tmux remote set-url --push origin git@github.com:marklee77/vcsh-homedir-tmux.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/vim.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-vim.git vim
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-vim.git vim
 setpush  = vcsh vim remote set-url --push origin git@github.com:marklee77/vcsh-homedir-vim.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/git.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-git.git git
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-git.git git
 setpush  = vcsh git remote set-url --push origin git@github.com:marklee77/vcsh-homedir-git.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/powerline.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-powerline.git powerline
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-powerline.git powerline
 update   = vcsh powerline pull 
 fixups   = pip install --user git+git://github.com/Lokaltog/powerline
 setpush  = vcsh powerline remote set-url --push origin git@github.com:marklee77/vcsh-homedir-powerline.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/pyenv.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-pyenv.git pyenv
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-pyenv.git pyenv
 setpush  = vcsh pyenv remote set-url --push origin git@github.com:marklee77/vcsh-homedir-pyenv.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/rbenv.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-rbenv.git rbenv
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-rbenv.git rbenv
 setpush  = vcsh rbenv remote set-url --push origin git@github.com:marklee77/vcsh-homedir-rbenv.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/nodenv.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-nodenv.git nodenv
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-nodenv.git nodenv
 setpush  = vcsh nodenv remote set-url --push origin git@github.com:marklee77/vcsh-homedir-nodenv.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/mail.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-mail.git mail
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-mail.git mail
 setpush  = vcsh mail remote set-url --push origin git@github.com:marklee77/vcsh-homedir-mail.git
 
 [${XDG_CONFIG_HOME:-$HOME/.config}/vcsh/repo.d/xconfig.git]
-checkout = vcsh clone https://github.com/marklee77/vcsh-homedir-xconfig.git xconfig
+checkout = vcsh clone https://gitlab.stillwell.me/mark/vcsh-homedir-xconfig.git xconfig
 setpush  = vcsh xconfig remote set-url --push origin git@github.com:marklee77/vcsh-homedir-xconfig.git
 
