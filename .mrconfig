@@ -1,4 +1,7 @@
 [DEFAULT]
+git_test = cd ${MR_REPO} && test -d .git && ! git annex wanted . >/dev/null 2>&1
+git_commit = git commit -a "$@" || true
+
 vcsh_test = perl:
     -d "$ENV{MR_REPO}/refs/heads" && -d "$ENV{MR_REPO}/refs/tags" &&
     -d "$ENV{MR_REPO}/objects" && -f "$ENV{MR_REPO}/config" &&
@@ -9,6 +12,14 @@ vcsh_push   = vcsh $(basename ${MR_REPO} .git) push "$@"
 vcsh_status = vcsh $(basename ${MR_REPO} .git) status "$@"
 vcsh_gc     = vcsh $(basename ${MR_REPO} .git) gc "$@"
 
-git_commit  = git commit -a "$@" || true
+git_annex_test = cd ${MR_REPO} && test -d .git && git annex wanted . >/dev/null 2>&1
+git_annex_fetch  = git annex --quiet fetch
+git_annex_update = git annex --quiet sync --content
+git_annex_status = git annex --quiet status
+git_annex_commit = git commit -a "$@" && git annex --quiet sync --content
+git_annex_record = git commit -a "$@"
+git_annex_push   = git annex --quiet sync --content
+git_annex_log    = git log "$@"
+git_annex_diff   = git diff "$@"
 
 include = cat ${XDG_CONFIG_HOME:-$HOME/.config}/mr/config.d/* 2>/dev/null || true
