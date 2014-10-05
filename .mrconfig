@@ -18,7 +18,7 @@ git_annex_update = git annex --quiet sync --content
 git_annex_status = git annex --quiet status
 git_annex_commit = git commit -a "$@" || true
 git_annex_record = git commit -a "$@"
-git_annex_push   = git annex --quiet sync --content
+git_annex_push   = git annex sync --content
 git_annex_log    = git log "$@"
 git_annex_diff   = git diff "$@"
 
