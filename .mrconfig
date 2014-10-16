@@ -8,7 +8,8 @@ vcsh_test = perl:
     `GIT_CONFIG="$ENV{MR_REPO}"/config git config --get vcsh.vcsh` =~ /true/
 vcsh_commit = vcsh $(basename ${MR_REPO} .git) commit -a "$@"
 vcsh_update = vcsh $(basename ${MR_REPO} .git) pull "$@"
-vcsh_push   = vcsh $(basename ${MR_REPO} .git) push "$@"
+vcsh_push   = [ $(vcsh $(basename ${MR_REPO} .git) rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || 
+              vcsh $(basename ${MR_REPO} .git) push "$@"
 vcsh_status = vcsh $(basename ${MR_REPO} .git) status "$@"
 vcsh_gc     = vcsh $(basename ${MR_REPO} .git) gc "$@"
 
