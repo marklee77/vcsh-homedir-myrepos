@@ -1,6 +1,8 @@
 [DEFAULT]
 git_test = cd ${MR_REPO} && test -d .git && ! git annex wanted . >/dev/null 2>&1
 git_commit = git commit -a "$@" || true
+git_push   = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || 
+             git push "$@"
 
 vcsh_test = perl:
     -d "$ENV{MR_REPO}/refs/heads" && -d "$ENV{MR_REPO}/refs/tags" &&
