@@ -26,5 +26,6 @@ git_annex_record = git commit -a "$@"
 git_annex_push   = git annex sync --content
 git_annex_log    = git log "$@"
 git_annex_diff   = git diff "$@"
+git_annex_skip   = test "$1" = autopush
 
 include = cat ${XDG_CONFIG_HOME:-$HOME/.config}/mr/config.d/* 2>/dev/null || true
