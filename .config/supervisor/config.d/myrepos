@@ -1,7 +1,7 @@
 [program:mrcommit]
-command=launchtool -t mrcommit -c "mr -d ${HOME} -q commit -m autocommit" --silent-restart-time=300 --silent-restart-status=0
+command=setlock -nx .local/var/lock/mrcommit.lock /bin/bash -c "while true; do mr -d ${HOME} -q commit -m autocommit; sleep 300; done"
 autorestart=true
 
 [program:mrpush]
-command=launchtool -t mrcommit -c "(nm-online && mr -d ${HOME} -q autopush) || /bin/true" --silent-restart-time=900 --silent-restart-status=0
+command=setlock -nx .local/var/lock/mrpush.lock /bin/bash -c "while true; do nm-online && mr -d ${HOME} -q commit -m autocommit; sleep 900; done"
 autorestart=true
