@@ -1,5 +1,5 @@
 [program:mrcommit]
-command=launchtool -t mrcommit -c "mr -d ${HOME} -q commit -m \"Autocommit \$(date)\"" --silent-restart-time=300 --silent-restart-status=0
+command=launchtool -t mrcommit -c "mr -d ${HOME} -q commit -m Autocommit" --silent-restart-time=300 --silent-restart-status=0
 autorestart=true
 
 [program:mrpush]
