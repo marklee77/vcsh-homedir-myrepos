@@ -3,5 +3,5 @@ command=launchtool -t mrcommit -c "mr -d ${HOME} -q commit -m \"Autocommit \$(da
 autorestart=true
 
 [program:mrpush]
-command=launchtool -t mrcommit -c "nm-online && mr -d ${HOME} -q autopush" --silent-restart-time=900 --silent-restart-status=0
+command=launchtool -t mrcommit -c "(nm-online && mr -d ${HOME} -q autopush) || /bin/true" --silent-restart-time=900 --silent-restart-status=0
 autorestart=true
