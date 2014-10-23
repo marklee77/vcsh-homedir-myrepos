@@ -3,6 +3,9 @@
 !.config/mr
 !.config/mr/config.d
 !.config/mr/config.d/myrepos
+!.config/supervisor
+!.config/supervisor/config.d
+!.config/supervisor/config.d/myrepos
 !.gitignore.d
 !.gitignore.d/myrepos
 !.mrconfig

@@ -1,0 +1,7 @@
+[program:mrcommit]
+command=launchtool -t mrcommit -c "mr -d ${HOME} -q commit -m \"Autocommit \$(date)\"" --silent-restart-time=300 --silent-restart-status=0
+autorestart=true
+
+[program:mrpush]
+command=launchtool -t mrcommit -c "nm-online && mr -d ${HOME} -q autopush" --silent-restart-time=900 --silent-restart-status=0
+autorestart=true
