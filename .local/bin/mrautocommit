@@ -1,0 +1,25 @@
+#!/bin/bash
+AUTOCOMMIT_SECONDS=300
+
+SCRIPTNAME="$(basename $0)"
+LOCKDIR="${HOME}/.local/var/lock/${SCRIPTNAME}"
+PIDFILE="${LOCKDIR}/PID"
+if mkdir ${LOCKDIR} &> /dev/null; then
+    trap "rm -rf ${LOCKDIR}" EXIT SIGHUP SIGINT SIGQUIT SIGTERM 
+    echo "$$" > ${PIDFILE}
+else
+    OTHERPID=$(cat ${PIDFILE})
+    if [ $? = 0 ] && ! kill -0 ${OTHERPID} &> /dev/null; then
+        # lock is stale, remove and try again...
+        rm -rf ${LOCKDIR}
+        exec "$0" "$@"
+    fi
+    echo "another instance of ${SCRIPTNAME} is currently running." >&2
+    exit 1
+fi
+
+while true; do 
+    mr -d ${HOME} -q commit -m autocommit
+    sleep ${AUTOCOMMIT_SECONDS}
+done
+

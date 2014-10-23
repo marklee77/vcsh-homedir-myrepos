@@ -8,4 +8,8 @@
 !.config/supervisor/config.d/myrepos
 !.gitignore.d
 !.gitignore.d/myrepos
+!.local
+!.local/bin
+!.local/bin/mrautocommit
+!.local/bin/mrautopush
 !.mrconfig
