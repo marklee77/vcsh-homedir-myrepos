@@ -1,5 +1,5 @@
 [program:mrcommit]
-command=/bin/bash -c "while true; do mr -d ${HOME} -q commit -m autocommit; sleep 300; done"
+command=mrautocommit
 autorestart=true
 
 [program:mrpush]
