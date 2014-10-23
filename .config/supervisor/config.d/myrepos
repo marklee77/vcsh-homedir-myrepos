@@ -3,5 +3,5 @@ command=mrautocommit
 autorestart=true
 
 [program:mrpush]
-command=/bin/bash -c "while true; do nm-online && mr -d ${HOME} -q commit -m autocommit; sleep 900; done"
+command=mrautopush
 autorestart=true
