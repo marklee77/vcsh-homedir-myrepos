@@ -20,6 +20,6 @@ fi
 
 while true; do 
     nm-online && mr -d ${HOME} -q autopush
-    sleep ${AUTOCOMMIT_SECONDS}
+    sleep ${AUTOPUSH_SECONDS}
 done
 
