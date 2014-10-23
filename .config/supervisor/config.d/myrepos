@@ -1,7 +1,7 @@
 [program:mrcommit]
-command=setlock -nx .local/var/lock/mrcommit.lock /bin/bash -c "while true; do mr -d ${HOME} -q commit -m autocommit; sleep 300; done"
+command=/bin/bash -c "while true; do mr -d ${HOME} -q commit -m autocommit; sleep 300; done"
 autorestart=true
 
 [program:mrpush]
-command=setlock -nx .local/var/lock/mrpush.lock /bin/bash -c "while true; do nm-online && mr -d ${HOME} -q commit -m autocommit; sleep 900; done"
+command=/bin/bash -c "while true; do nm-online && mr -d ${HOME} -q commit -m autocommit; sleep 900; done"
 autorestart=true
