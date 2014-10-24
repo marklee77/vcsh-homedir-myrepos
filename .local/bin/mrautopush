@@ -18,6 +18,11 @@ else
     exit 1
 fi
 
+# FIXME: shouldn't need this...
+for VARVAL in $(gnome-keyring-daemon --components=ssh,gpg,secrets,pkcs11 --start); do
+    export ${VARVAL}
+done
+
 while true; do 
     nm-online && mr -d ${HOME} -q autopush
     sleep ${AUTOPUSH_SECONDS}
