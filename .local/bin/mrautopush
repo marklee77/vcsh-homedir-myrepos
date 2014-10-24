@@ -24,7 +24,7 @@ for VARVAL in $(gnome-keyring-daemon --components=ssh,gpg,secrets,pkcs11 --start
 done
 
 while true; do 
-    nm-online && mr -d ${HOME} -q autopush
+    nm-online && mr -d ${HOME} autopush
     sleep ${AUTOPUSH_SECONDS}
 done
 
