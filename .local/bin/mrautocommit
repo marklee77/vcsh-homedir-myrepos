@@ -5,11 +5,12 @@ SCRIPTNAME="$(basename $0)"
 LOCKDIR="${HOME}/.local/var/lock/${SCRIPTNAME}"
 PIDFILE="${LOCKDIR}/PID"
 if mkdir ${LOCKDIR} &> /dev/null; then
-    trap "rm -rf ${LOCKDIR}" EXIT SIGHUP SIGINT SIGQUIT SIGTERM 
+    trap "rm -rf ${LOCKDIR}; exit 0" EXIT SIGHUP SIGINT SIGQUIT SIGTERM 
     echo "$$" > ${PIDFILE}
 else
     OTHERPID=$(cat ${PIDFILE})
-    if [ $? = 0 ] && ! kill -0 ${OTHERPID} &> /dev/null; then
+    OTHERNAME=$(basename $(ps aux | perl -ane "print \"\$F[11]\\n\" if (\$F[1] == ${OTHERPID});" 2>/dev/null) 2>/dev/null)
+    if [ -n "${OTHERPID}" ] && [ "${OTHERNAME}" != "${SCRIPTNAME}" ]; then
         # lock is stale, remove and try again...
         rm -rf ${LOCKDIR}
         exec "$0" "$@"
