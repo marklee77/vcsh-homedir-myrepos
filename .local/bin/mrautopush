@@ -1,5 +1,5 @@
 #!/bin/bash
-AUTOPUSH_SECONDS=905
+AUTOPUSH_SECONDS=10
 
 SCRIPTNAME="$(basename $0)"
 LOCKDIR="${HOME}/.local/var/lock/${SCRIPTNAME}"
@@ -19,11 +19,11 @@ else
     exit 1
 fi
 
+#for VARVAL in $(gnome-keyring-daemon -s); do
+#    export ${VARVAL}
+#done
+
 while true; do 
-    for VARVAL in $(gnome-keyring-daemon -s); do
-        export ${VARVAL}
-    done
-    nm-online && mr -d ${HOME} autopush
+    nm-online && mr -s -d ${HOME} autopush
     sleep ${AUTOPUSH_SECONDS}
 done 2>&1 > ${HOME}/.local/var/log/mrautopush.log
-
