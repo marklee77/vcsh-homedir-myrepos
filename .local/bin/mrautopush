@@ -23,7 +23,7 @@ while true; do
     for VARVAL in $(gnome-keyring-daemon -s); do
         export ${VARVAL}
     done
-    nm-online && mr -d ${HOME} -q autopush
+    nm-online && mr -d ${HOME} autopush
     sleep ${AUTOPUSH_SECONDS}
 done 2>&1 > ${HOME}/.local/var/log/mrautopush.log
 
