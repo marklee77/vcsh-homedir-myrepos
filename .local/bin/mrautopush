@@ -25,5 +25,5 @@ while true; do
     done
     nm-online && mr -d ${HOME} -q autopush
     sleep ${AUTOPUSH_SECONDS}
-done
+done 2>&1 > ${HOME}/.local/var/log/mrautopush.log
 
