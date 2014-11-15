@@ -20,6 +20,7 @@ else
 fi
 
 while true; do 
-    nm-online && mr -d ${HOME} -q autopush
+    echo "GPG_AGENT_INFO=${GPG_AGENT_INFO}"
+    nm-online && mr -d ${HOME} autopush
     sleep ${AUTOPUSH_SECONDS}
-done
+done 2>&1 > ${HOME}/.local/var/log/mrautopush.log
