@@ -21,6 +21,7 @@ fi
 
 while true; do 
     mr -d ${HOME} -q commit -m autocommit
+    # use sshpass to get around gpg problems with encrypted repos...
     nm-online && sshpass mr -d ${HOME} -q autopush
     sleep ${AUTOPUSH_SECONDS}
-done 2>&1 > ${HOME}/.local/var/log/${SCRIPTNAME}.log
+done
