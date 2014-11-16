@@ -22,7 +22,7 @@ fi
 while true; do 
     mr -d ${HOME} -q commit -m autocommit
     if nm-online; then
-      expect -f <<EOF
+      expect -f - <<EOF
 spawn mr "-d ${HOME} -q autopush"
 interact
 EOF
