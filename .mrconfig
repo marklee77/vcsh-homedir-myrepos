@@ -1,31 +1,31 @@
 [DEFAULT]
 git_test = cd ${MR_REPO} && test -d .git && ! git annex wanted . >/dev/null 2>&1
 git_commit = git commit -a "$@" || true
-git_push   = git push "$@"
+git_push = git push "$@"
 git_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || 
-               git push "$@"
+	              git push "$@"
 
 vcsh_test = perl:
-    -d "$ENV{MR_REPO}/refs/heads" && -d "$ENV{MR_REPO}/refs/tags" &&
-    -d "$ENV{MR_REPO}/objects" && -f "$ENV{MR_REPO}/config" &&
-    `GIT_CONFIG="$ENV{MR_REPO}"/config git config --get vcsh.vcsh` =~ /true/
+	   -d "$ENV{MR_REPO}/refs/heads" && -d "$ENV{MR_REPO}/refs/tags" &&
+	   -d "$ENV{MR_REPO}/objects" && -f "$ENV{MR_REPO}/config" &&
+	   `GIT_CONFIG="$ENV{MR_REPO}"/config git config --get vcsh.vcsh` =~ /true/
 vcsh_commit = vcsh $(basename ${MR_REPO} .git) commit -a "$@"
 vcsh_update = vcsh $(basename ${MR_REPO} .git) pull "$@"
-vcsh_push   = vcsh $(basename ${MR_REPO} .git) push "$@"
+vcsh_push = vcsh $(basename ${MR_REPO} .git) push "$@"
 vcsh_autopush = [ $(vcsh $(basename ${MR_REPO} .git) rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || 
-                vcsh $(basename ${MR_REPO} .git) push "$@"
+	               vcsh $(basename ${MR_REPO} .git) push "$@"
 vcsh_status = vcsh $(basename ${MR_REPO} .git) status "$@"
-vcsh_gc     = vcsh $(basename ${MR_REPO} .git) gc "$@"
+vcsh_gc = vcsh $(basename ${MR_REPO} .git) gc "$@"
 
 git_annex_test = cd ${MR_REPO} && test -d .git && git annex wanted . >/dev/null 2>&1
-git_annex_fetch  = git annex --quiet fetch
+git_annex_fetch = git annex --quiet fetch
 git_annex_update = git annex --quiet sync --content
 git_annex_status = git annex --quiet status
 git_annex_commit = git commit -a "$@" || true
 git_annex_record = git commit -a "$@"
-git_annex_push   = git annex sync --content
-git_annex_log    = git log "$@"
-git_annex_diff   = git diff "$@"
-git_annex_skip   = test "$1" = autopush
+git_annex_push = git annex sync --content
+git_annex_log = git log "$@"
+git_annex_diff = git diff "$@"
+git_annex_skip = test "$1" = autopush
 
 include = cat ${XDG_CONFIG_HOME:-$HOME/.config}/mr/config.d/* 2>/dev/null || true
