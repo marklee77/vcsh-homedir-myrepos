@@ -21,6 +21,6 @@ fi
 
 while true; do 
     mr -d ${HOME} -q commit -m autocommit
-    nm-online && mr -d ${HOME} -q autopush
+    nm-online && tmux -c "mr -d ${HOME} -q autopush"
     sleep ${AUTOPUSH_SECONDS}
 done 2>&1 > ${HOME}/.local/var/log/${SCRIPTNAME}.log
