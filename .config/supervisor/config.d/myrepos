@@ -1,7 +1,3 @@
-[program:mrcommit]
-command=mrautocommit
-autorestart=true
-
-[program:mrpush]
-command=mrautopush
+[program:mrsync]
+command=mrsync
 autorestart=true
