@@ -21,6 +21,11 @@ fi
 
 while true; do 
     mr -d ${HOME} -q commit -m autocommit
-    nm-online && tmux -c "mr -d ${HOME} -q autopush"
+    if nm-online; then
+      expect -f <<EOF
+spawn mr "-d ${HOME} -q autopush"
+interact
+EOF
+    fi
     sleep ${AUTOPUSH_SECONDS}
 done 2>&1 > ${HOME}/.local/var/log/${SCRIPTNAME}.log
