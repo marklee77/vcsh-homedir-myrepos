@@ -1,3 +1,0 @@
-[program:mrsync]
-command=mrsync
-autorestart=true
