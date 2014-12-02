@@ -12,4 +12,5 @@
 !.local/bin
 !.local/bin/mrautocommit
 !.local/bin/mrautopush
+!.local/bin/mrsync
 !.mrconfig
