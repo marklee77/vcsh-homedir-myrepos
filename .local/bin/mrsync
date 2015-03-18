@@ -22,11 +22,11 @@ logfile="${HOME}/.local/var/log/${scriptname}.log"
 exec 1>${logfile}
 exec 2>&1
 
-mr -d ${HOME} -q commit -m autocommit
+mr -d ${HOME} commit -m autocommit
 
 # use sshpass to get around gpg problems with encrypted repos...
 if nm-online && ping -c 1 8.8.8.8 2>&1 >/dev/null; then
-    sshpass mr -d ${HOME} -q autopush
+    sshpass mr -d ${HOME} autopush
 fi
 
 exit 0
