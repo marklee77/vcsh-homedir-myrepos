@@ -22,6 +22,8 @@ logfile="${HOME}/.local/var/log/${scriptname}.log"
 exec 1>${logfile}
 exec 2>&1
 
+exit 0
+
 mr -d ${HOME} commit -m autocommit
 
 rundir="${HOME}/.local/var/run/${scriptname}"
