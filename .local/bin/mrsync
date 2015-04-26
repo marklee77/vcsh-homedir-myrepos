@@ -24,9 +24,12 @@ exec 2>&1
 
 mr -d ${HOME} commit -m autocommit
 
+rundir="${HOME}/.local/var/run/${scriptname}"
+mkdir -p ${rundir}
 # use sshpass to get around gpg problems with encrypted repos...
 if nm-online && ping -c 1 8.8.8.8 2>&1 >/dev/null; then
-    sshpass mr -d ${HOME} autopush
+    sshpass mr -d ${HOME} autopush && \
+        rm -f ${rundir}/mr.error || touch ${rundir}/mr.error
 fi
 
 exit 0
