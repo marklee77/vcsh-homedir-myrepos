@@ -24,7 +24,7 @@ exec 2>&1
 
 pkill -RTMIN+5 i3blocks
 
-mr -d ${HOME} commit -m autocommit
+sshpass mr -d ${HOME} commit -S -m autocommit
 
 rundir="${HOME}/.local/var/run/${scriptname}"
 mkdir -p ${rundir}
