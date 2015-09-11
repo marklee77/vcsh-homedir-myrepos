@@ -18,8 +18,8 @@ vcsh_status = vcsh $(basename ${MR_REPO} .git) status "$@"
 vcsh_gc = vcsh $(basename ${MR_REPO} .git) gc "$@"
 
 git_annex_test = cd ${MR_REPO} && test -d .git && git annex wanted . >/dev/null 2>&1
-git_annex_fetch = git annex --quiet fetch
-git_annex_update = git annex --quiet sync --content
+git_annex_fetch = git annex fetch
+git_annex_update = git annex sync --content
 git_annex_status = git annex --quiet status
 git_annex_commit = git commit -a "$@" || true
 git_annex_record = git commit -a "$@"
