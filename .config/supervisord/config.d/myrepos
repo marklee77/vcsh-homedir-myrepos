@@ -1,3 +1,4 @@
 [program:mrsync]
 command=runinterval 600 mrsync
 autorestart=true
+stopsignal=KILL
