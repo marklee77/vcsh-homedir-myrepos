@@ -33,7 +33,7 @@ pkill -RTMIN+5 i3blocks
 sshpass mr -d ${HOME} commit -S -m autocommit
 
 # use sshpass to get around gpg problems with encrypted repos...
-if nm-online && ping -c 1 8.8.8.8 2>&1 >/dev/null; then
+if ping -c 1 8.8.8.8 2>&1 >/dev/null; then
     sshpass mr -d ${HOME} autopush && \
         rm -f ${rundir}/mr.error || touch ${rundir}/mr.error
 fi
