@@ -1,5 +1,8 @@
 *
 !.config
+!.config/anacron
+!.config/anacron/cron.weekly
+!.config/anacron/cron.weekly/myrepos-*
 !.config/mr
 !.config/mr/config.d
 !.config/mr/config.d/myrepos
