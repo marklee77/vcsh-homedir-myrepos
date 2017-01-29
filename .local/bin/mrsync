@@ -23,11 +23,11 @@ mkdir -p ${rundir}
 
 pkill -RTMIN+5 i3blocks
 
-sshpass mr -d ${HOME} commit -S -m autocommit
+sshpass mr -j 10 -d ${HOME} commit -S -m autocommit || touch ${rundir}/mr.error
 
 # use sshpass to get around gpg problems with encrypted repos...
 if ping -c 1 8.8.8.8 2>&1 >/dev/null; then
-    sshpass mr -d ${HOME} autopush && \
+    sshpass mr -j 3 -d ${HOME} autopush && \
         rm -f ${rundir}/mr.error || touch ${rundir}/mr.error
 fi
 
