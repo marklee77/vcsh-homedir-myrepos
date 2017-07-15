@@ -18,7 +18,7 @@ if ! sshpass mr -j 10 -d "${HOME}" commit -S -m autocommit; then
 fi
 
 # use sshpass to get around gpg problems with encrypted repos...
-if ping -c 1 8.8.8.8 >/dev/null 2>&1; then
+if ping -c 1 squid.stillwell.me >/dev/null 2>&1; then
     if sshpass mr -d "${HOME}" autopush; then
         rm -f "${rundir}/mr.error"
     else
