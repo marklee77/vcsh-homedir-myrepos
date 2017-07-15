@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 scriptname="$(basename "${BASH_SOURCE[0]}")"
 rundir="${XDG_RUNTIME_DIR:-${HOME}/.local/var/run}/${scriptname}"
