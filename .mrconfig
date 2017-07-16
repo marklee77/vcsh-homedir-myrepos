@@ -8,7 +8,6 @@ vcsh_test = perl:
 	   -d "$ENV{MR_REPO}/refs/heads" && -d "$ENV{MR_REPO}/refs/tags" &&
 	   -d "$ENV{MR_REPO}/objects" && -f "$ENV{MR_REPO}/config" &&
 	   `GIT_CONFIG="$ENV{MR_REPO}"/config git config --get vcsh.vcsh` =~ /true/
-#vcsh_commit = vcsh $(basename "${MR_REPO}" .git) commit -a "$@"
 vcsh_commit = pwd >> ~/pwds.txt && git commit -a "$@"
 vcsh_update = vcsh $(basename "${MR_REPO}" .git) pull "$@"
 vcsh_push = vcsh $(basename ${MR_REPO} .git) push "$@"

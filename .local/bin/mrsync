@@ -19,7 +19,7 @@ sshpass mr -j 10 -d "${HOME}" commit -S -m autocommit || touch "${errfile}"
 
 # use sshpass to get around gpg problems with encrypted repos...
 if ping -c 1 squid.stillwell.me >/dev/null 2>&1; then
-    if sshpass mr -j 3 -d "${HOME}" autopush; then
+    if sshpass mr -d "${HOME}" autopush; then
         rm -f "${errfile}"
     else
         touch "${errfile}"
