@@ -5,7 +5,7 @@ git_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD
 git_gc = git gc "$@"
 
 vcsh_test = cd "${MR_REPO}" && grep 'vcsh[[:space:]]*=[[:space:]]*true' config >/dev/null 2>&1
-vcsh_commit = git commit -a "$@" || true
+vcsh_commit = git commit -a "$@" 
 vcsh_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || git push "$@"
 vcsh_gc = git gc "$@"
 
