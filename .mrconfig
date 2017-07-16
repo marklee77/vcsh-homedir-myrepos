@@ -2,7 +2,7 @@
 git_test = cd ${MR_REPO} && test -d .git && ! git annex wanted . >/dev/null 2>&1
 git_commit = git commit -a "$@" || true
 git_push = git push "$@"
-git_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || 
+git_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] ||
 	              git push "$@"
 
 vcsh_test = perl:
