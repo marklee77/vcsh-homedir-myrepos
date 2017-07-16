@@ -26,4 +26,6 @@ if ping -c 1 squid.stillwell.me >/dev/null 2>&1; then
     fi
 fi
 
+pkill -RTMIN+5 i3blocks
+
 exit 0
