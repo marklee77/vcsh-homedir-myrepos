@@ -14,9 +14,14 @@ trap 'flock -u 200 && rm -f "${pidfile}"' EXIT SIGHUP SIGINT SIGQUIT SIGTERM
 
 pkill -RTMIN+5 i3blocks
 
-errfile="${rundir}/mr.error"
-sshpass mr -j 10 -d "${HOME}" commit -S -m autocommit || touch "${errfile}"
+errfile="${rundir}/commit.error"
+if sshpass mr -j 10 -d "${HOME}" commit -S -m autocommit; then
+    rm -f "${errfile}"
+else
+    touch "${errfile}"
+fi
 
+errfile="${rundir}/push.error"
 # use sshpass to get around gpg problems with encrypted repos...
 if ping -c 1 squid.stillwell.me >/dev/null 2>&1; then
     if sshpass mr -d "${HOME}" autopush; then
