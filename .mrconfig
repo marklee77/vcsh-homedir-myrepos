@@ -1,19 +1,17 @@
 [DEFAULT]
-git_test = cd ${MR_REPO} && test -d .git && ! git annex wanted . >/dev/null 2>&1
+git_test = cd "${MR_REPO}" && test -d .git && ! git annex wanted . >/dev/null 2>&1
 git_commit = git commit -a "$@" || true
 git_push = git push "$@"
-git_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || 
-	              git push "$@"
+git_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || git push "$@"
 
 vcsh_test = perl:
 	   -d "$ENV{MR_REPO}/refs/heads" && -d "$ENV{MR_REPO}/refs/tags" &&
 	   -d "$ENV{MR_REPO}/objects" && -f "$ENV{MR_REPO}/config" &&
 	   `GIT_CONFIG="$ENV{MR_REPO}"/config git config --get vcsh.vcsh` =~ /true/
-vcsh_commit = vcsh $(basename ${MR_REPO} .git) commit -a "$@"
-vcsh_update = vcsh $(basename ${MR_REPO} .git) pull "$@"
+vcsh_commit = echo "${MR_REPO}" > ~/mrrepos.txt && vcsh $(basename "${MR_REPO}" .git) commit -a "$@"
+vcsh_update = vcsh $(basename "${MR_REPO}" .git) pull "$@"
 vcsh_push = vcsh $(basename ${MR_REPO} .git) push "$@"
-vcsh_autopush = [ $(vcsh $(basename ${MR_REPO} .git) rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || 
-	               vcsh $(basename ${MR_REPO} .git) push "$@"
+vcsh_autopush = [ $(vcsh $(basename "${MR_REPO}" .git) rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || vcsh $(basename "${MR_REPO}" .git) push "$@"
 vcsh_status = vcsh $(basename ${MR_REPO} .git) status "$@"
 vcsh_gc = vcsh $(basename ${MR_REPO} .git) gc "$@"
 
