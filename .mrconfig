@@ -12,8 +12,8 @@ vcsh_test = perl:
 vcsh_commit = git commit -a "$@"
 vcsh_update = vcsh $(basename "${MR_REPO}" .git) pull "$@"
 vcsh_push = vcsh $(basename ${MR_REPO} .git) push "$@"
-#vcsh_autopush = [ $(vcsh $(basename "${MR_REPO}" .git) rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || vcsh $(basename "${MR_REPO}" .git) push "$@"
-vcsh_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || git push "$@"
+vcsh_autopush = [ $(vcsh $(basename "${MR_REPO}" .git) rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || vcsh $(basename "${MR_REPO}" .git) push "$@"
+#vcsh_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || git push "$@"
 vcsh_status = vcsh $(basename ${MR_REPO} .git) status "$@"
 vcsh_gc = vcsh $(basename ${MR_REPO} .git) gc "$@"
 
