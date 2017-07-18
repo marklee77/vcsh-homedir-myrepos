@@ -3,7 +3,6 @@ scriptname="$(basename "${BASH_SOURCE[0]}")"
 rundir="${XDG_RUNTIME_DIR:-${HOME}/.local/var/run}/${scriptname}"
 pidfile="${rundir}/PID"
 cleanup () {
-    xset dpms 0 0 0
     rm -f "${pidfile}"
     flock -u 200
 }
