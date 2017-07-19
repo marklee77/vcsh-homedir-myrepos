@@ -1,7 +1,8 @@
 [DEFAULT]
 git_test = cd "${MR_REPO}" && [ -d .git ] && ! git annex wanted . >/dev/null 2>&1
 git_commit = git commit -a "$@" || true
-git_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || git push "$@"
+#git_autopush = [ $(git rev-list --left-right --count remotes/origin/master..HEAD | cut -f2) = 0 ] || git push "$@"
+git_autopush = git rev-list --right-only --count origin/master..HEAD | grep -q '^0$' || git push "$@"
 git_gc = git gc "$@"
 
 vcsh_test = cd "${MR_REPO}" && grep 'vcsh[[:space:]]*=[[:space:]]*true' config >/dev/null 2>&1
