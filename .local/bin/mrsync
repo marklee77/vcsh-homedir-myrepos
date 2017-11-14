@@ -17,7 +17,7 @@ trap cleanup EXIT HUP INT QUIT TERM
 pkill -RTMIN+5 i3blocks
 
 errfile="${rundir}/commit.error"
-if sshpass mr -j 10 -d "${HOME}" commit -S -m autocommit; then
+if sshpass mr -j 3 -d "${HOME}" commit -S -m autocommit; then
     rm -f "${errfile}"
 else
     touch "${errfile}"
