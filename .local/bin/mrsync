@@ -4,7 +4,6 @@ rundir="${XDG_RUNTIME_DIR:-${HOME}/.local/var/run}/${scriptname}"
 pidfile="${rundir}/PID"
 cleanup () {
     rm -f "${pidfile}"
-    flock -u 200
 }
 mkdir -p "${rundir}"
 exec 200>"${pidfile}"
